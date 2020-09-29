@@ -72,3 +72,32 @@
   ```
 
   Check more functools at [official doc](https://docs.python.org/3/library/functools.html)
+
+## Copy list
+
+To copy the list in python, we have various possibilities:
+- Use list.copy() (shadow copy)
+  ```python
+  new_list = old_list.copy()
+  ```
+- Slice it (shadow_copy)
+  ```python
+  new_list = old_list[:]
+  ```
+- Use built in list() function
+  ```python
+  new_list = list(old_list)
+  ```
+- Use generic copy.copy() (shadow copy)
+  ```python
+  import copy
+  new_list = copy.copy(old_list)
+  ```
+  This is a little slower than list() because it has to find out the datatype of old_list first.
+- If the list contains objects and you want to copy them as well, use generic copy.deepcopy():
+  ```python
+  import copy
+  new_list=copy.deepcopy(old_list)
+  ```
+  Obviously the slowest and most memory-needing method, but sometimes unavoidable.
+
