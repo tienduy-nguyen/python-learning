@@ -33,6 +33,7 @@ fruits.reverse()
 fruits.sort()
 
 # Reverse sort
+sorted(fruites)
 fruits.sort(reverse=True)
 
 print(fruits)
