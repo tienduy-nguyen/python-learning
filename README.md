@@ -10,6 +10,9 @@
   - [Tuple](#tuple)
   - [Set](#set)
   - [Dictionaries](#dictionaries)
+  - [Functions](#functions)
+  - [Conditionals](#conditionals)
+  - [Loops](#loops)
 
 
 ## Comments
@@ -304,6 +307,14 @@
 - Check key
   ```python
   person.has_key('first_name') #-> True, False
+
+  d = {"key1": 10, "key2": 23}
+
+  if "key1" in d:
+      print("this will execute")
+
+  if "nonexistent key" in d:
+    print("this will not")
   ```
 - Built in functions for dictionary
   ```python
@@ -311,4 +322,94 @@
   str(dict) # 
   type(variable)
   ```
+**[⬆ back to top](#table-of-contents)**
+
+## Functions
+
+- Create a function
+  ```python
+  def sayHello(name= 'Sam'):
+    print(f'Hello {name}')
+  
+  sayHello('Karen')
+  ```
+- Return values
+  ```python
+  def getSum(num1, num2):
+    total = num1 + num2
+    return total
+  num = getSum(2, 3)
+  print(num)
+  ```
+- Lambda function (anonymous function)
+  ```python
+  getSum = lambda num1, num2: (num1+num2)
+  print(getSum(10, 2))
+  ```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## Conditionals
+
+- Comparison Operators (==, !=, >, <, >=, <=) - Used to compare values
+  ```python
+  x = 10
+  y = 50
+  if x > y:
+    print(f'{x} is greater than {y}')
+  elif x == y:
+    print(f'{x} is equal {y}')
+  else:
+    print(f'{x} is lower than {y}')
+  ```
+- Nested if
+  ```python
+  if x > 2:
+    if x <= 10:
+      print(f'{x} is less than 2 and greater than 10')
+  ```
+- Logical or, and or not
+  ```python
+  # and
+  if x > 2 and x <=10:
+    print(f'{x} is less than 2 and greater than 10')
+
+  # or
+  if x > 2 or x <=10:
+    print(f'{x} is less than 2 or greater than 10')
+
+  # not
+  if not(x == y):
+    print(f'{x} is not equal to {y}')
+  var = False
+  if not var:
+      print 'learnt stuff'
+  ```
+- Membership Operators (not, not in)
+  
+  Membership operators are used to test if a sequence is presented in an object
+  ```python
+  # in
+  if x in numbers:
+    print(x in numbers)
+
+  # in
+  if x not in numbers:
+    print(x in numbers)
+  ```
+- Identity Operators (is, is not)
+  Compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:
+  ```python
+  if x is y:
+    print(x is y)
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Loops
+- Simple for loop
+  ```python
+  
+  ```
+
 **[⬆ back to top](#table-of-contents)**
