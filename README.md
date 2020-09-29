@@ -7,6 +7,9 @@
   - [Variables](#variables)
   - [Strings](#strings)
   - [List](#list)
+  - [Tuple](#tuple)
+  - [Set](#set)
+  - [Dictionaries](#dictionaries)
 
 
 ## Comments
@@ -42,7 +45,7 @@
   ```python
   x = str(x)
   y = int(y)
-  z  =float(y)
+  z = float(y)
   ```
 - Check type
   ```python
@@ -142,7 +145,7 @@
 - Create list
   ```python
   numbers = [1,2,3,4,5,6]
-  fruits = ['Apples', 'Oranges', 'Grapes', 'Pears]
+  fruits = ['Apples', 'Oranges', 'Grapes', 'Pears']
 
   # Or we can use constructor
   numbers2 = list[1, 2, 3, 4, 5]
@@ -194,3 +197,118 @@
   dir =["A1","A2","A10","A3"]
   sorted(dir, key=lambda x: int(x[1:]))
   ```
+**[⬆ back to top](#table-of-contents)**
+
+## Tuple
+
+- A tuple is a collection which is ordered and unchangeable. Allows duplicate members
+- Create tuple
+  ```python
+  # Create tuple
+  fruits = ('Apples', 'Oranges','Grapes')
+  fruits2 = tuple(('Apples', 'Oranges','Grapes'))
+  
+  # Single value needs trailing comma
+  fruits3 = ('Apple',)
+
+  # Get value
+  print(fruits[1])
+
+  # Get length
+  print(len(fruits))
+
+  ```
+- Tuple can't change value
+- Delete tuple
+  ```python
+  del fruits2
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Set
+- Set is a collection which is unordered and unindexed. Not duplicate members
+- Create set
+  ```python
+  fruits_set =  {'Apple', 'Orange', 'Mango'}
+
+  # Check if in set
+  print('Apple' in fruits_set)
+
+  # Add to set
+  fruits_set.add('Grape')
+
+  # Remove from set
+  fruits_set.remove('Grape')
+
+  # Delete set
+  del fruits_set
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Dictionaries
+- A dictionary is a collection which is unordered, changeable and indexed. No duplicate
+- Create dictionary
+  ```python
+  person = {
+    'first_name': 'Adam',
+    'last_name': 'Levil',
+    'age': 20
+  }
+
+  # Or use contructor
+  person1 = dict(first_name='Adam', last_name='Levil', age=20)
+
+  ```
+- Get value
+  ```python
+  print(person['first_name'])
+  print(person['last_name'])
+  print(person.get('first_name', default=None))
+  ```
+- Add key/value
+  ```python
+  person['phone']='555-555-5555'
+  ```
+- Get dict keys
+  ```python
+  print(person.key())
+  ```
+
+- Get dict items
+  ```python
+  print(person.items())
+  ```
+- Copy dict
+  ```python
+  person2 = person.copy()
+  ```
+- Remove item
+  ```python
+  del(person['age'])
+  person.pop('phone')
+- Get length
+  ```python
+  print(len(person))
+  ```
+- Clear
+  ```python
+  person.clear()
+  ```
+- List of dict
+  ```python
+  people = [{
+    {'name': 'Martha', 'age': 20},
+    {'name': 'Karen', age:22}
+  }]
+  ```
+- Check key
+  ```python
+  person.has_key('first_name') #-> True, False
+  ```
+- Built in functions for dictionary
+  ```python
+  cmp(dict1, dict2) # Compare two dict
+  str(dict) # 
+  type(variable)
+  ```
+**[⬆ back to top](#table-of-contents)**
