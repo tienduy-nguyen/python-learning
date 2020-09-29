@@ -409,7 +409,34 @@
 ## Loops
 - Simple for loop
   ```python
-  
+  for person in people:
+    print(f'Current person: {person}')
   ```
-
+- Using break in loop
+  ```python
+  for person in people:
+    if person == 'Sarah':
+      break
+    print(f'Current person: {person}')
+  ```
+- Using continue
+  ```python
+  for person in people:
+    if person == 'Sarah':
+      continue
+    print(f'Current person: {person}')
+- range
+  ```python
+  for i in range(len(people)):
+    print(people[i])
+  for i in range(0, 11):
+    print(f'Number: {i}')
+  ```
+- while loop
+  ```python
+  count = 0
+  while count <= 10:
+    print(f'Count: {count}')
+    count += 1
+  ```
 **[⬆ back to top](#table-of-contents)**
