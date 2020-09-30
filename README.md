@@ -1,7 +1,7 @@
-# Python Fundamentals & essentials
+# Python Fundamentals & Essentials
 
 ## Table of contents
-- [Python Fundamentals & essentials](#python-fundamentals--essentials)
+- [Python Fundamentals & Essentials](#python-fundamentals--essentials)
   - [Table of contents](#table-of-contents)
   - [Comments](#comments)
   - [Variables](#variables)
@@ -422,11 +422,30 @@
     print(f'Current person: {person}')
   ```
 - Using continue
+  continue: ignore the current loop with condition
   ```python
   for person in people:
     if person == 'Sarah':
       continue
     print(f'Current person: {person}')
+  ```
+  Another example:
+  ```python
+  for letter in 'Python':     # Vi du thu nhat
+   if letter == 'h':
+      continue
+   print 'Current char :', letter
+  ```
+
+  Result:
+  ```
+  Current char : P
+  Current char : y
+  Current char : t
+  Current char : o
+  Current char : n
+  ```
+
 - range
   ```python
   for i in range(len(people)):
@@ -443,7 +462,28 @@
   ```
 **[⬆ back to top](#table-of-contents)**
 
+- Using pass
+  ```python
+  for letter in 'Python': 
+   if letter == 'h':
+      # if letter == 'h', we can pass, and execute the method after thath
+      pass
+      print 'This is block pass'
+   print 'Current char :', letter
 
+  print "Good bye!"
+  ```
+  Result:
+  ```python
+  Current char : P
+  Current char : y
+  Current char : t
+  This is block pass
+  Current char : h
+  Current char : o
+  Current char : n
+  Good bye!
+  ```
 ## Modules
 - A module is basically a file containing a set of functions to include in your application. There are core python modules, modules you can install using the pip package manager (including Django) as well as custom modules
   ```python
@@ -608,6 +648,6 @@
   print(trump._protected) # True
   print(trump.__private) # lỗi
   ```
-- Polimophism
+- Polimorphism
   
 **[⬆ back to top](#table-of-contents)**
