@@ -8,6 +8,9 @@
     - [Python's Decorator Syntax](#pythons-decorator-syntax)
   - [Use-cases](#use-cases)
     - [Authorization](#authorization)
+    - [Logging](#logging)
+    - [Sử dụng decorator với tham số](#sử-dụng-decorator-với-tham-số)
+    - [Decorator Class](#decorator-class)
 
 
 Python là một ngôn ngữ rất mạnh mẽ, một trong những phần quan trọng nhất của Python đó decorator. Trong ngữ cảnh của design pattern, ta có thể hiểu decorator là những functions thay đổi tính năng của một function, method hay class một cách dynamic, mà không phải sử dụng subclass. Nó rất tiện lợi khi bạn muốn mở rộng tính năng của một function mà bạn không muốn thay đổi nó. Chúng ta có thể implement decorator pattern bất nơi nào, nhưng Python tạo điều kiện cho việc đó bằng cách cung cấp nhưng tính năng và cú pháp vô cùng tiện ích.
@@ -195,6 +198,114 @@ Decorators có thể giúp kiểm tra một người đã được ủy quyền 
           return f(*args, **kwargs)
       return decorated
 ```
+### Logging
+Logging là một ví dụ khác có thể sử dụng decorator:
+```python
+from functools import wraps
+
+def logit(func):
+    @wraps(func)
+    def with_logging(*args, **kwargs):
+        print(func.__name__ + " was called")
+        return func(*args, **kwargs)
+    return with_logging
+
+@logit
+def addition_func(x):
+   """Do some math."""
+   return x + x
 
 
+result = addition_func(4)
+# Output: addition_func was called
+
+```
+### Sử dụng decorator với tham số
+
+Nếu chú ý, chúng ta có thể thấy @wraps cũng là một decorator, nhưng nó được truyền vào một tham số như những function khác. Khi chúng ta sử dụng cú pháp @my_decorator, chúng ta gọi một wrapper fucntion với một function như một tham số. Với Python, tất cả đều là object, kể cả function, chúng ta có thể viết một function trả về một wrapper function.
+
+Viết decorator bên trong một function
+Quay trở lại với ví dụ về logging và tạo một wrapper cho phép chúng ta định nghĩa một file log output
+
+```python
+from functools import wraps
+
+def logit(logfile='out.log'):
+    def logging_decorator(func):
+        @wraps(func)
+        def wrapped_function(*args, **kwargs):
+            log_string = func.__name__ + " was called"
+            print(log_string)
+            # Open the logfile and append
+            with open(logfile, 'a') as opened_file:
+                # Now we log to the specified logfile
+                opened_file.write(log_string + '\n')
+        return wrapped_function
+    return logging_decorator
+
+@logit()
+def myfunc1():
+    pass
+
+myfunc1()
+# Output: myfunc1 was called
+
+@logit(logfile='func2.log')
+def myfunc2():
+    pass
+
+myfunc2()
+# Output: myfunc2 was called
+```
+### Decorator Class
+
+
+Giờ đây chúng ta đã có logit decorator, nhưng đôi khi trong ứng dụng của chúng ta có một vài thành phần nguy hiểm, và lỗi xảy ra ở những phần đó cần được chú ý đến ngay lập tức khi nó bắt đầu xảy ra. Ví dụ đôi khi chúng ta muốn ghi log ra file, nhưng với những lỗi nghiêm trọng chúng ta muốn gửi mail, nhưng vẫn giữ cả log cho phép theo dõi. Đây là một case chúng ta có thể sử dụng đến kế thừa.
+
+May mắn là với Python, class cũng có thể được sử dụng để build decorator. Chúng ta sẽ xây dựng lại logit class thay vì function.
+
+```python
+class logit(object):
+    def __init__(self, logfile='out.log'):
+        self.logfile = logfile
+
+    def __call__(self, func):
+        log_string = func.__name__ + " was called"
+        print(log_string)
+        
+        with open(self.logfile, 'a') as opened_file:
+        
+            opened_file.write(log_string + '\n')
+        # gửi thông báo sau khi log ra file xong
+        self.notify()
+
+    def notify(self):
+        # đây là class log file thường nên sẽ không implement chức năng gửi mail
+        pass
+
+```
+
+Cách implement này nhìn gọn gàng hơn cách viết nested function trả về wrapper function, và cách wrap function với decorator vẫn sử dụng cú pháp như cũ:
+```python
+@logit()
+def myfunc1():
+    pass
+```
+
+Bây giờ chúng ta có thể kế thừa logit class và thêm chức năng gửi mail bằng cách overwrite hàm notify
+
+```python
+class email_logit(logit):
+    '''
+    A logit implementation for sending emails to admins
+    when the function is called.
+    '''
+    def __init__(self, email='admin@myproject.com', *args, **kwargs):
+        self.email = email
+        super(email_logit, self).__init__(*args, **kwargs)
+
+    def notify(self):
+        # Gửi email đến self.email
+        pass
+```
 [Source](https://viblo.asia/p/function-decorator-trong-python-gDVK2QDe5Lj)
