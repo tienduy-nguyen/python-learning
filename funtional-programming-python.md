@@ -52,7 +52,7 @@ Hãy bắt đầu với khái niệm nền tảng quan trọng cho việc lập 
 
   ```python
   lst = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-  for i in zip(*lst)
+  for i in zip(*lst):
       print(i)
   # (1, 4, 7)
   # (2, 5, 8)
