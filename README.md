@@ -13,6 +13,8 @@
   - [Functions](#functions)
   - [Conditionals](#conditionals)
   - [Loops](#loops)
+  - [Modules](#modules)
+  - [Classes](#classes)
 
 
 ## Comments
@@ -439,4 +441,173 @@
     print(f'Count: {count}')
     count += 1
   ```
+**[⬆ back to top](#table-of-contents)**
+
+
+## Modules
+- A module is basically a file containing a set of functions to include in your application. There are core python modules, modules you can install using the pip package manager (including Django) as well as custom modules
+  ```python
+  # Core modules
+  import datetime
+  from datetime import date
+  import time
+  from time import time
+
+  # Pip module
+  # import camelcase
+  # from camelcase import CamelCase
+
+  # Import custom module
+  import validator
+  from validator import validate_email
+
+  # today = datetime.date.today()
+  today = date.today()
+  timestamp = time()
+
+  # c = CamelCase()
+  # print(c.hump('hello there world'))
+
+  email = 'test@test.com'
+  if validate_email(email):
+    print('Email is valid')
+  else:
+    print('Email is bad')
+  ```
+**[⬆ back to top](#table-of-contents)**
+
+## Classes
+- A class is like a blueprint for creating objects. An object has properties and methods(functions) associated with it. Almost everything in Python is an object
+- Create class
+  ```python
+  # Create class
+  class User:
+    def __init__(self, name, email, age):
+      self.name = name
+      self.email = email
+      self.age = age
+    def __repr__(self)
+      return self.name
+    def greeting(self):
+      return f'My name is {self.name} and I am {self.age}'
+    def has_birthday(self):
+      self.age += 1  
+  A = User('Tim', 'tim@gmail.com', 26)
+  A.has_birthday()
+  print(A.greeting)
+  ```
+- OOP: inherit class (extend class)
+  ```python
+  class Customer(User):
+      def set_balance(self, balance):
+        self.balance = balance
+
+      def greeting(self):
+        return f'My name is {self.name} and I am {self.age} and I owe a balance of {self.balance}'
+  ```
+- Property, class method, static method in class
+  ```python
+  class Person:
+    count = 0
+
+    def __init__(self, fname='', lname='', age=18):
+        self.fname = fname
+        self.lname = lname
+        self.age = age
+        Person.count += 1
+
+    def print(self):
+        print(f'{self.fname} {self.lname} ({self.age} years old)')
+
+    @property
+    def full_name(self):
+        return f'{self.fname} {self.lname}'
+
+    @classmethod
+    def print_count(cls):
+        print(f'{cls.count} objects created')
+
+    @staticmethod
+    def birth_year(age: int) -> int:
+        from datetime import datetime as dt
+        year = dt.now().year
+        return year - age
+
+
+    class Student(Person):
+        def __init__(self, fname='', lname='', age=18, group='', specialization=''):
+            super().__init__(fname, lname, age)
+            self.group = group
+            self.specialization = specialization
+
+        def print(self):
+            super().print()
+            print(f'Group {self.group}/{self.specialization}')
+
+        @property
+        def academic_info(self):
+            return f'Group {self.group}, Specialization of {self.specialization}'
+
+
+    if __name__ == '__main__':
+        trump = Student('Donald', 'Trump', 22, '051311', 'Computer science')
+        trump.print()
+        print(trump.full_name)
+        print(Student.count)
+        Student.print_count()
+        print(Student.birth_year(37))
+        print(trump.academic_info)
+  ```
+
+  Result:
+  ```
+  Donald Trump (22 years old)
+  Group 051311/Computer science
+  Donald Trump
+  1
+  1 objects created
+  1983
+  Group 051311, Specialization of Computer science
+  ```
+
+  Check more at [tuhocit](https://tuhocict.com/ke-thua-inheritance-trong-python/)
+- Name mangling & Inherit
+
+  When in doubt, leave it "public" - I mean, do not add anything to obscure the name of your attribute. If you have a class with some internal value, do not bother about it. Instead of writing:
+
+
+  ```python
+  class Stack(object):
+
+    def __init__(self):
+        self.__storage = [] # Too uptight
+
+    def push(self, value):
+        self.__storage.append(value)
+  ```
+  write this by default:
+
+  ```python
+  class Stack(object):
+
+    def __init__(self):
+        self.storage = [] # No mangling
+
+    def push(self, value):
+        self.storage.append(value)
+  ```
+
+  Ex: add 2 attributes in class
+  ```python
+  self._protected = True
+  self.__private = True
+  ```
+  try to call them
+  ```
+  trump = Student('Donald', 'Trump', 22, '051311', 'Computer science')
+  print(trump._protected) # True
+  print(trump.__private) # lỗi
+  ```
+- Polimophism
+  
 **[⬆ back to top](#table-of-contents)**
