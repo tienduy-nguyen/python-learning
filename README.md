@@ -58,6 +58,31 @@
   ```python
   print(type(y))
   ```
+- Global variable
+  If we don't use global variable
+  ```python
+  f = 0
+  def someFunction():
+    f = "f in def"
+    print(f)
+    
+  someFunction()
+  print(f)
+  # result: f in def and 0
+  ``` 
+  
+  Now if we use global variable for f
+  ```python
+  f = 0
+  def someFunction():
+    global f
+    f = "f in def"
+    print(f)
+    
+  someFunction()
+  print(f)
+  # result: "f in def" and "f in def"
+  ```
 **[⬆ back to top](#table-of-contents)**
 
 ## Strings
