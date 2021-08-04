@@ -1,11 +1,9 @@
 # Exercices - TheHackingProject
 
-Temps de travail: Le cours + exercies = 1 jour
-
 La formation TheHackingProject est utilisé Ruby, mais on peut travailler avec peu n'importe quelle langage qu'on veut :)).
 Ici, je vais donner la réponse en `python`
 
-On  a 17 petites exercies à faire. Le temp estimé est peu près maximum 4h, ça dépends le niveau et la capacité de dev.
+Phần nội dụng trong file này, viết hoàn toàn trực tiếp trong trong file markdown theo logic của python, các lời giải chưa kiểm tra lại kết quả, nên sẽ có những lời giải chưa chính xác hoàn toàn. Quan trọng là lấy ý tưởng của lời giải để hiểu cách làm.
 
 
 ### 2.1. Bonjour monde
@@ -22,9 +20,9 @@ print("Bonjour, monde!)
 ### 2.2. Un programme qui dit bonjour
 Écris un programme `exo_02.rb` qui demande le prénom de l’utilisateur, et qui salue l’utilisateur avec “Bonjour, prénom !”
 - En vn: Viết chương trình exo_02.py mà khi chạy, chương trình sẽ yêu cầu người dùng nhập từ bàn phím tên của họ,
-    rồi sau đó print xin chào + tên người đó ra màn hình: 
+  rồi sau đó print xin chào + tên người đó ra màn hình:
 - Résultat demandé: `Bonjour, <nom utilisateur>!`
-    
+
 - Solution
 ```python
 name = input("Enter your name: ")
@@ -34,14 +32,14 @@ print("Bonjour" + name)
 
 
 ### 2.3. Un programme qui calcule des âges
-Écris un programme exo_03.rb qui demande son année de naissance à l’utilisateur, 
+Écris un programme exo_03.rb qui demande son année de naissance à l’utilisateur,
 puis qui ressort l’âge que l’utilisateur a eu en 2017.
 
-- En vn: Viết chương trình `exo_03.py`, yêu cầu nhập vào năm sinh của người dùng, 
+- En vn: Viết chương trình `exo_03.py`, yêu cầu nhập vào năm sinh của người dùng,
   sau đó tính toán tuổi của họ vào năm 2017
 
-- Résultat demandé: 
-ex: yearInput = 1997 --> en 2017, cet utilisateur a 2017-1997 = 20 ans. Thời điểm đẹp nhất trên đời :))
+- Résultat demandé:
+  ex: yearInput = 1997 --> en 2017, cet utilisateur a 2017-1997 = 20 ans. Thời điểm đẹp nhất trên đời :))
 
 - Solution
 ```python
@@ -51,13 +49,13 @@ print(f"In 2017, I'am {ageIn2017} year olds")
 ```
 
 ### 2.4. Un programme centenaire
-Écris un programme `exo_04.rb` qui demande son année de naissance à l’utilisateur, 
+Écris un programme `exo_04.rb` qui demande son année de naissance à l’utilisateur,
 puis qui ressort l’année où l’utilisateur aura 100 ans.
 
-- En vn: viết một chương trình `exo_04.py` yêu cầu nhập năm sinh của người dùng, 
+- En vn: viết một chương trình `exo_04.py` yêu cầu nhập năm sinh của người dùng,
   sau đó in ra năm mà người đó 100 tuổi
-- Résultat demandé: 
-ex: yearInput = 1997 --> résultat = 1997 + 100 = 2097
+- Résultat demandé:
+  ex: yearInput = 1997 --> résultat = 1997 + 100 = 2097
 
 - Solution
 ```python
@@ -72,7 +70,7 @@ The year when I'm 100 year olds is: 2097
 
 
 ### 2.5. Un programme qui répète
-Écris un programme `exo_05.rb` qui demande un nombre à l’utilisateur, 
+Écris un programme `exo_05.rb` qui demande un nombre à l’utilisateur,
 puis qui écrit autant de fois “Salut, ça farte ?”
 
 - En vn: viết một chương trình `exo_05.py`, yêu cầu nhập vào một số bất kỳ, rồi in ra số lần câu "Salut, ça farte?" bằng với số vừa nhập vào đó
@@ -103,14 +101,14 @@ Salut, ça farte?
 ```
 
 ### 2.6. Un programme qui répète (bis)
-Écris un programme exo_06.rb qui demande un nombre à un utilisateur, 
-puis qui écrit autant de fois -1 “Bonjour toi !“. 
-Ainsi, si l’utilisateur rentre 10, 
+Écris un programme exo_06.rb qui demande un nombre à un utilisateur,
+puis qui écrit autant de fois -1 “Bonjour toi !“.
+Ainsi, si l’utilisateur rentre 10,
 le programme devra écrire 9 fois “Bonjour toi !”
 
 - En vn: Viết một chương trình `exo_06.py`, yêu cầu nhập vào một số, sau đó in ra trừ 1 số lần câu: "Bonjour toi!"
-ex: numInput = 8 --> in ra 7 lần câu "Bonjour toi!"
-  
+  ex: numInput = 8 --> in ra 7 lần câu "Bonjour toi!"
+
 numInput = 6 --> in ra 5 lần câu "Bonjour toi!"
 
 - Solution
@@ -128,7 +126,7 @@ Bonjour toi!
 
 ```
 ### 2.7. Compter
-Écris un programme `exo_07.rb` qui demande un nombre à l’utilisateur, 
+Écris un programme `exo_07.rb` qui demande un nombre à l’utilisateur,
 puis qui compte jusqu’à ce nombre.
 
 - En vn: viết một chương trình `exo_07.py` yêu câù nhập vào một số, sau đó in từ 1 đến số đó ra màn hình
@@ -138,7 +136,7 @@ numInput = int(input("Enter a number: ")
 for num in range(numInput):
     print(num + 1)
 ```
-- Résultat: 
+- Résultat:
 ```
 1
 2
@@ -173,8 +171,8 @@ for num in range(numInput):
 ### 2.9. Afficher les années
 Écris un programme exo_09.rb qui demande son année de naissance à l’utilisateur,
 puis qui va ressortir chaque année depuis son année de naissance jusqu’aujourd’hui.
-- En vn: viết một chương trình  `exo_09.py`, nhập vào năm sinh của người dùng, 
-sau đó in ra mỗi năm từ năm sinh đó đến năm nay
+- En vn: viết một chương trình  `exo_09.py`, nhập vào năm sinh của người dùng,
+  sau đó in ra mỗi năm từ năm sinh đó đến năm nay
 
 - Solution
 ````python
@@ -207,12 +205,12 @@ Với cách này, thì yearOfBirthDay, sẽ tự động tăng dần đến this
 ```
 
 ### 2.10. Afficher tous les âges
-Écris un programme exo_10.rb qui demande son année de naissance à l’utilisateur 
-et qui va afficher chaque année depuis son année de naissance jusqu’aujourd’hui. 
-Pour chaque année affichée, 
+Écris un programme exo_10.rb qui demande son année de naissance à l’utilisateur
+et qui va afficher chaque année depuis son année de naissance jusqu’aujourd’hui.
+Pour chaque année affichée,
 le programme devra annoncer l’âge que l’utilisateur avait cette année-là.
 
-- En vn: viết chương trình `exo_10.py`, yêu cầu nhập vào năm sinh, sau đó in ra mỗi năm từ năm đó đến nay. 
+- En vn: viết chương trình `exo_10.py`, yêu cầu nhập vào năm sinh, sau đó in ra mỗi năm từ năm đó đến nay.
   Khi in ra mỗi năm đó, cần phải đưa ra số tuổi của người dùng tại năm đó nữa.
 
 - Solution
@@ -223,7 +221,7 @@ thisYear = 2021
 year = yearOfBirth
 for year in range(yearOfBirthDay, thisYear + 1):
     age = year - yearOfBirth
-    print(f"{year} - {age} year olds")
+    print(f"{year - age} year olds")
 
 ```
 
@@ -234,7 +232,7 @@ thisYear = 2021
 year = yearOfBirth
 while year <= thisYear:
     age = year - yearOfBirth
-    print(f"{year} - {age} year olds")
+    print(f"{year - age} year olds")
     year += 1
     
 ```
@@ -249,17 +247,17 @@ while year <= thisYear:
 2021 -  don't know
 ```
 
-Note: nếu ham học hỏi hơn, thích mày mò một chút, có thể thêm điều kiện 
+Note: nếu ham học hỏi hơn, thích mày mò một chút, có thể thêm điều kiện
 đề viết ra khi số tuổi là 0 hoặc 1, thì chữ `year old` sẽ k có `s`. Try it =))
 
 
 ### 2.11. Virer les années
-Le programme `exo_10.rb` est cool, mais on peut l’améliorer. 
-Écris un programme `exo_11.rb` qui va demander son âge à l’utilisateur, 
+Le programme `exo_10.rb` est cool, mais on peut l’améliorer.
+Écris un programme `exo_11.rb` qui va demander son âge à l’utilisateur,
 et qui, pour chaque année depuis sa naissance, dira “Il y a X ans, tu avais Y ans”.
 
 - En vn:  Viết chương trình `exo_11.py`, nhập vào số tuổi
-của người dùng, tại mỗi năm từ đó đến nay, tính toán số năm so với hiên tại + số tuổi với format:
+  của người dùng, tại mỗi năm từ đó đến nay, tính toán số năm so với hiên tại + số tuổi với format:
   "Il y a X ans, tu avais Y ans"
 
 - Solution
@@ -289,20 +287,20 @@ for year,index in enemurate(listYear):
 ```
 
 ### 2.12. Annoncer l’âge, option BG
-Notre programme exo_11.rb est devenu beau gosse. 
-Écris un programme exo_12.rb qui va faire la même chose, 
-sauf que si X et Y sont égaux, il dira 
+Notre programme exo_11.rb est devenu beau gosse.
+Écris un programme exo_12.rb qui va faire la même chose,
+sauf que si X et Y sont égaux, il dira
 “Il y a n ans, tu avais la moitié de l’âge que tu as aujourd’hui”.
 
 - En vn: Tương tự như bài trên, bây h viết chương trình `exo_12.py`, nhưng cần tính toán, khi có số tuổi bằng 1 nửa hiện tại
 - Solution
 ```python
-age = int(input("Enter your age: ")
+age = int(input("Enter your age: ") # Nhớ rằng input nên luôn luôn đưa description như dạng này vào nhé. Để lúc chạy chương trình, mình hiểu là mình đang nhập cho biến gì.
 yearOfBirth = 2021 - age
 count = 0
-haftAge = (2021-year)/2 if (2021-year)%2 == 0 else -1   # -1 mean, not exist haft age, ex: 21%2 !0, not exist age
+halfAge = age//2 if age%2 == 0 else -1   # -1 mean, not exist haft age, ex: 21%2 !0, not exist age
 for year in range(yearOfBirth, 2022):
-    if haflAge > 0 and halfAge == year:
+    if halfAge > 0 and halfAge == year:
         print(f"(En {year}) Il y a {2021-year}, avais la moitié de l’âge que tu as aujourd’hui")
     else:
         print(f"(En {year}) Il y a {2021-year}, tu avais {count} ans")
@@ -320,14 +318,15 @@ for year in range(yearOfBirth, 2022):
 ```
 
 ### 2.13. Une liste d’email
-Écris un programme exo_13.rb qui va 
-créer une liste de 50 faux emails et les stocker dans une array. 
+Écris un programme exo_13.rb qui va
+créer une liste de 50 faux emails et les stocker dans une array.
 Voici le format que devront avoir les faux emails :
 "jean.dupont.01@email.fr"
 "jean.dupont.02@email.fr"
 etc..
 
 - vas-y!
+- En VN: yêu cầu của đề bài là phải lưu tất cả các mail trong 1 array (list) trước, rồi sau đó mới làm gì tiếp theo thì làm
 ### 2.14. Afficher les bons emails
 Prends le programme exo_13.rb et créé un programme exo_14.rb qui va reprendre l’array des emails créés, et n’afficher que les emails avec un nombre pair.
 "jean.dupont.02@email.fr"
@@ -335,6 +334,9 @@ Prends le programme exo_13.rb et créé un programme exo_14.rb qui va reprendre 
 etc..
 
 - vas-y, essaye-le!
+- En VN: như bài trên, buộc phải lưu tất cả các email vào 1 array (list) trước, rồi lặp array này, in ra email với số chẵn
+
+
 ### 2.15. La pyramide
 Construis un programme exo_15.rb qui va demander à l’utilisateur un nombre entre 1 et 25 et qui va sortir une pyramide à descendre d’autant d’étages que ce nombre. Voici un exemple :
 Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ?
@@ -354,9 +356,13 @@ Je vais donner la réponse pour lui, l'autre cas, je vais te laisser de réfléc
 - Solution
 
 ```python
-num = int(input("Enter a number of start for pyramid: "))
-for i in range(num):
-    print(i*"#")
+def pyramid1():
+    num = int(input("Enter a number of start for pyramid1: "))
+    for i in range(num):
+        print(i*"#")
+
+pyramid1()
+
 ```
 
 ### 2.16. La pyramide, dans l’autre sens
@@ -373,8 +379,19 @@ Voici la pyramide :
 ```
 
 - Trường hợp này tính toán dâú cách + số lượng dấu #
+- Solutions
+```python
+def pyramid2():
+    num = int(input("Enter a number of start for pyramid2: "))
+    for i in range(num):
+        print((num-i)*" " + i*"#")
+
+pyramid2()
+```
 
 Bien que légèrement différent dans l’énoncé, ce programme est bien plus dur que le exo_15.rb, donc c’est normal de devoir réfléchir à comment le faire :sunglasses:
+
+
 2.17. La pyramide, version expert
 Crée un programme exo_17.rb qui va demander à l’utilisateur un nombre entre 1 et 25 et qui va sortir une pyramide qui monte et qui descend, comme montré ci-dessous :
 Salut, bienvenue dans ma super pyramide ! Combien d'étages veux-tu ?
@@ -389,3 +406,14 @@ Voici la pyramide :
 ```
 
 - Trường hợp này dấu cách 2 bên, và chỉ chạy cho nhừng trường hợp là số lẻ: eacNnum%2 != 0
+- Solutions
+```python
+def pyramid3():
+    num = int(input("Enter a number of start for pyramid3: "))
+    for i in range(num):
+        if i%2 != 0:
+            space = (num-i)//2
+            print(space*" " + i*"#" + space*" ")
+
+pyramid3()
+```
