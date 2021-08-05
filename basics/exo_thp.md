@@ -327,6 +327,21 @@ etc..
 
 - vas-y!
 - En VN: yêu cầu của đề bài là phải lưu tất cả các mail trong 1 array (list) trước, rồi sau đó mới làm gì tiếp theo thì làm
+- Solutions
+```
+listEmail = []
+for num in range(50):
+  if(num < 9):
+    listEmail.append(f'jean.dupont.0{num+1}@email.fr')
+  else:
+    listEmail.append(f'jean.dupont.{num+1}@email.fr')
+    
+# print to console
+for email in listEmail:
+  print(email)
+```
+
+
 ### 2.14. Afficher les bons emails
 Prends le programme exo_13.rb et créé un programme exo_14.rb qui va reprendre l’array des emails créés, et n’afficher que les emails avec un nombre pair.
 "jean.dupont.02@email.fr"
@@ -336,6 +351,20 @@ etc..
 - vas-y, essaye-le!
 - En VN: như bài trên, buộc phải lưu tất cả các email vào 1 array (list) trước, rồi lặp array này, in ra email với số chẵn
 
+```
+listEmail = []
+for num in range(50):
+  if(num < 9):
+    listEmail.append(f'jean.dupont.0{num+1}@email.fr')
+  else:
+    listEmail.append(f'jean.dupont.{num+1}@email.fr')
+    
+# print to console
+count = 0
+for email in listEmail:
+  if(count%2 ==0):
+    print(email)
+```
 
 ### 2.15. La pyramide
 Construis un programme exo_15.rb qui va demander à l’utilisateur un nombre entre 1 et 25 et qui va sortir une pyramide à descendre d’autant d’étages que ce nombre. Voici un exemple :
